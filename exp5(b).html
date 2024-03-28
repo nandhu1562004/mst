@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>DOM API for HTML modification</title> 
+</head> 
+<body> 
+    <h4>Stock prices :</h4> 
+    <p>SENSEX <p id="dem"></p></p> 
+    <script> 
+        let max=-1000,min=1000; 
+        function stock(){ 
+            let marke=Math.floor((Math.random()*199)-99); 
+            if(60000+((marke/100)*60000)>60000){ 
+                max=marke; 
+                document.getElementById("dem").style.color="green"; 
+            } 
+            else if(60000+((marke/100)*60000)<60000){ 
+                min=marke; 
+                document.getElementById("dem").style.color="red"; 
+            } 
+            document.getElementById("dem").innerHTML=60000+((marke/100)*60000); 
+        } 
+        setInterval(stock,3000); 
+    </script> 
+</body> 
+</html>
